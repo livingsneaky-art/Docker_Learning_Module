@@ -53,10 +53,87 @@
                 - Developers and Operations work together to package the application in a container
                 - No environmental configuration needed on server - except Docker Runtime
 
+
+            Docker Image
+                - The actual package
+                - artifact, that can be moved around
+
+            Docker Container
+                - actually start the application
+                - container environment is created
+
 */
 //Docker vs. Virtual Machine
+/*
+    - Size: Difference between them is Docker image much smaller
+    - Speed: Docker containers start and run much fast
+    - Compatibility: VM of any OS can run on any OS host
+
+
+    - Docker on OS level
+    - Different levels of abstraction
+    - Why linus-based docker containers don't run on Windows
+*/
 //Docker Installation
+/*
+    - Before installing Docker
+        -pre-requisites 
+            Docker Toolbox for older Mac and Windows
+    - Install Docker on Mac
+    - Install Docker on Windows
+    - Install Docker on Linux
+
+    Docker engine
+    Docker CLI client
+    Docker Compose
+*/
 //Main Commands
+/*
+    Basic Commands
+    Overview
+    - Container vs Image
+    - Version and Tag
+    - Docker Commands
+        - docker pull
+        - docker run
+        - docker start
+        - docker stop
+        - docker ps
+        - docker exec -it
+        - docker logs
+    Difference Image and Container
+    - CONTAINER is a running enviroment for IMAGE
+        - application image: postgres, redis, mongo, ...
+        - port binded: talk to application running inside of container
+            - Port 5000
+        - virtual file system
+
+        official docker images
+            - postgres
+                docker run postgres
+            - redis
+                docker run redis
+                docker run redis:4.0
+                    - pulls image and starts container
+        docker ps - to check what container running
+        docker run -d redis - with -d to run the container fetching back its id
+        docker stop (container id) - to stop running the docker container
+        docker ps -a - with -a you can see which container running or not
+                     - lists running and stopped container
+        docker start (container id) - to run the specific container
+
+        CONTAINER Port vs HOST Port
+            - Multiple containers can run on your host machine
+            - Your laptop has only certain ports available
+
+        Binding host to redis
+            - docker run -p6000:6379 redis
+            - docker ps - this will show that we already bind the host to redis
+            - docker run -p6000:6379 -d redis - to run the container returning its id
+            
+            - docker run -p 6001:6379 redis:4.0 - to run, if same port with the above which is 6000:6379 it will cause error
+
+*/
 //Debugging a Container
 
 //Volumes - Persisting Data
