@@ -186,11 +186,45 @@
     - JS and Nodejs application = simple demo of javascript and nodejs in the backend, to stimulate local development process
     - MongoDB Docker Container = connect to a docker container with a mongoDB in it
 
-    Docker in Software Developemtn
+    Docker in Software Development
+        - docker pull redis
+        - docker pull postgres
+
+        - docker pull mongo
+        - docker pull mongo-express 
     
+        - docker images = to see all the images
+
+    Docker Network
+        - Docker network ls
+        
+        - docker network create mongo-network = to create a network
+    Run Mongo Containers
+        - docker run -p 27017:27017 -d mongo = to run the mongo container in detached mode
+        - docker run -p 27017:27017 -d -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network mongo
+
+        - docker ps = to see the container running
+        - docker logs (container id) = to see the logs of the container
+
+        - docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password --net mongo-network --name mongo-express -e ME_CONFIG_MONGODB_SERVER=mongodb mongo-express
+            = connect to mongodb container
+
+        - docker logs (container id) = to see the logs of the container
+        - docker logs (container id) | tail = to see the last logs of the container
+        - docker logs (container id) -f = to see the logs of the container in real time
+
+        Fully funtional javascript nodejs application which has presistence with mongoDB and also have mongo UI both of them running in docker container
+        
 */
 //Docker Compose - Running multiple services
-//Dockerfile - Building own Docker image
+/*
+    - Using Docker Compose
+         - for running multiple Docker containers
+    - Docker Compose = tool for defining and running multi-container Docker applications
+    - Creating the Docker Compose File
+          - docker-compose -f mongo.yaml up = to run the docker compose file
+          - docker-compose -f mongo.yaml down = to stop the docker compose file
+*/
 //Dockerfile - Building own Docker image
 //Deploying the containerized App
 
