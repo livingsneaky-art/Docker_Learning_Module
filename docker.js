@@ -135,13 +135,60 @@
 
 */
 //Debugging a Container
+/*
+    - docker logs
+    - docker exec -it
+
+    - docker pull = which pulls the image to repository to local
+    - docker run = combines combine pull and start, pull the image if not locally available
+    - docker start = starts the container
+    - docker stop 
+    - docker run -d = -d you can run the container in detached mode
+    - docker run -d -p = -p allows you to find a host to the container
+    - docker run -d -p6000:6379
+    - docker ps -a = -a to see all the container running or not
+    - docker images = to see all the images
+
+    - docker ps = to see a container that currently running
+    - docker logs (container id) = to see the logs of the container
+
+    - docker run -d -p60001:6379 --name redis-older redis:4.0 = to run the container with a name (to change the name)
+    - docker ps = to see the container running
+
+    - docker run -d -p6000:6379 --name redis-latest redis = to run the container with a name (to change the name)
+    - docker ps = to see the container running
+
+    - docker logs redis-older = to see the logs of the container (using name)
+
+    - docker exec -it (container id) /bin/bash (bash) = to run the container in interactive mode
+         - ls
+         - pwd
+         - cd /
+         - env
+    - docker exec -it redis-order /bin/bash = to run the container in interactive mode (using name)
+
+    - docker run = where you create a new container from an image, docker run will take an image with a specific version or latest
+    - docker start = you not working with images but rather with containers, for examples you have a container running and you want to start it again
+*/
 
 //Volumes - Persisting Data
 
 //How to use docker in practice
 //Demo Project
-
+/*
+    Workflow with Docker
+    - Development
+    - Continuous Integration/Delivery
+    - Deployment
+*/
 //Developing with Containers
+/*
+    - JS and Nodejs application = simple demo of javascript and nodejs in the backend, to stimulate local development process
+    - MongoDB Docker Container = connect to a docker container with a mongoDB in it
+
+    Docker in Software Developemtn
+    
+*/
 //Docker Compose - Running multiple services
 //Dockerfile - Building own Docker image
 //Dockerfile - Building own Docker image
