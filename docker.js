@@ -226,6 +226,19 @@
           - docker-compose -f mongo.yaml down = to stop the docker compose file
 */
 //Dockerfile - Building own Docker image
+/*
+    Dockerfile
+    What is a Dockerfile?
+    - Blueprint for building images
+        - Copy artifact (jar, war, bundle.js)
+    - Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image
+     
+    CMD = entrypoint command
+    RUN = can have multiple commands
+
+    Create the Dockerfile
+        - Docker build -t (name of the image):1.0(version) . = to build the docker image
+*/
 //Deploying the containerized App
 
 //Volumes Demo
