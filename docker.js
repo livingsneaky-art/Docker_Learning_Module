@@ -238,7 +238,38 @@
 
     Create the Dockerfile
         - Docker build -t (name of the image):1.0(version) . = to build the docker image
+    
+    Start "my-app" container to verify
+        - app start successfully
+        - app environment is configured correctly
+    
+    To delete an Image
+        - docker rmi (image id) = to delete an image
+    To delte a Container
+        - docker rm (container id) = to delete a container
+
+        - docker build -t (name of the image):1.0(version) . = to build the docker image
+        - docker images = to see all the images
+        - docker ps -a | grep (name of the image) = to see the container running or not
+
+        - docker logs (container id) = to see the logs of the container
+        - docker exec -it (container id) /bin/sh = to run the container in interactive mode
+        - ls 
+        - env
+
+        Inorder to delete the container you need to stop it first
+        - docker stop (container id) = to stop the container
+
 */
+//Private Docker Registry
+/*
+    - Docker private repository
+    - Registry options
+    - build & tag an image
+    - docker login
+    - docker push
+*/
+
 //Deploying the containerized App
 
 //Volumes Demo
