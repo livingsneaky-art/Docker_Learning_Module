@@ -268,9 +268,73 @@
     - build & tag an image
     - docker login
     - docker push
+
+    - Create private Docker reposistory on AWS
+    - Login to AWS ECR
+    Pre-Requisites
+        - AWS Cli needs to be installed
+        - Credentials configured
+
+    docker tag = rename the image
+
+    docker tag techworld-js-docker-demo-app:1.0 livingsneaky/techworld-js-docker-demo-app:1.0 = to rename the image
+    docker images = to see all the images
+    docker push livingsneaky/techworld-js-docker-demo-app:1.0 = to push the image to the repository
+
+    Make some changes to the App, rebuild and push a new version to AWS repo
+    - docker build -t techworld-js-docker-demo-app:1.1 .
+    - docker images = to see all the images
+    - docker tag techworld-js-docker-demo-app:1.1 livingsneaky/techworld-js-docker-demo-app:1.1 = to rename the image
 */
 
 //Deploying the containerized App
+/*
+    Deploy containerized App
+        - Image from a private repository
+        - Deploy multiple containers
+        - Deployment Server
+
+    Congratulations!
+        - We completed the whole workflow
+*/
 
 //Volumes Demo
+/*
+    Docker Volumes
+        - When do we need Docker Volumes?
+        - What is Docker Volumes?
+        - 3 Volume Types
+        - Docker Volumes in docker-compose file
+
+    For data persistence
+        - Databases
+        - Other Stateful Applications
+
+    3 Volume Types
+        - docker run
+             - -v /home/mount/data:/var/lib/mysql/data = to create a volume
+             - -v /var/lib/mysql/data = to create a volume
+             - -v name:/var/lib/mysql/data = to create a volume with a name (mostly used in docker-compose file)
+    
+    Docker Volumes Demo
+        - docker volume create mysql-data = to create a volume
+
+
+        - docker ps
+        - docker exec -it (container id) sh = to run the container in interactive mode
+
+    Docker Volume Locations
+        - Windows C:\ProgramData\docker\volumes
+        - Linus /var/lib/docker/volumes
+        - Mac /var/lib/docker/volumes
+
+        Docker for Mac creates a Linux virtual machine and stores all the Docker data here!
+
+        - docker exec -it (container id) sh = to run the container in interactive mode
+        - ls /data/db
+
+        Ctrl + a + k = to exit the container
+
+        CONGRATULATIONS!
+*/
 
